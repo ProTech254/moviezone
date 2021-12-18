@@ -1,0 +1,164 @@
+/*------ MAIN UI ------*/
+header, footer 
+{
+    padding: 1em;
+    color: white;
+    background-color: #004d77;
+    clear: left;
+    text-align: center;
+}
+
+div#id_container 
+{
+    width: 99%;
+    min-width: 800px;
+	margin: 0 auto;
+}
+
+div#id_left 
+{
+    float: left;
+    max-width: 220px;
+    margin: 0;
+    padding: 1em;
+	text-align: center;
+}
+
+div#id_left ul 
+{
+    list-style-type: none;
+    padding: 0;
+}
+   
+div#id_left ul a 
+{
+    text-decoration: none;
+}
+
+div#id_left a.button 
+{
+    font-size: 20px;
+    background-color: rgba(0,77,119,1);
+    color: rgba(255,255,255,1);
+    padding:10px 10px 10px 10px;
+    float:left;
+    min-width: 180px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border:4px outset;
+    border-color: #ddd;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+}
+
+div#id_left a:link.button 
+{
+    color: rgba(255,255,255,1);
+    background-color: rgba(0,77,119,1);
+    text-shadow: 0px 2px 5px rgba(255,255,255,0.6);
+}
+
+div#id_left a:visited.button 
+{
+    color: rgba(255,255,255,1);
+    background-color: rgba(0,77,119,1);
+    text-shadow: 0px 2px 5px rgba(255,255,255,0.6);
+}
+
+div#id_left a:hover.button 
+{
+    color: rgba(80,80,80,1);
+    text-shadow: 2px 2px 2px rgba(200,200,200,1);
+    background-color: rgba(255,255,255,1);
+}
+
+div#id_left a:active.button 
+{
+    color: rgba(255,255,255,1);
+    text-shadow: 2px 2px 2px #000000;
+    background-color: rgba(0,77,119,.7);
+    border:4px inset;
+}
+
+div#id_right 
+{
+    margin-left: 220px;
+    border-left: 5px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+
+div#id_content 
+{
+    padding: 1em;
+    overflow: hidden;
+	float: left;
+	clear: both;
+}
+
+header .button
+{
+    font-size: 16px;
+    background-color: rgba(0,77,119,1);
+    color: rgba(255,255,255,1);
+    padding:10px 10px 10px 10px;
+    min-width: 150px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border:4px outset;
+    border-color: #ddd;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+header a:link.button 
+{
+    color: rgba(255,255,255,1);
+    background-color: rgba(0,77,119,1);
+    text-shadow: 0px 2px 5px rgba(255,255,255,0.6);
+}
+
+header a:hover.button 
+{
+    color: rgba(80,80,80,1);
+    text-shadow: 2px 2px 2px rgba(200,200,200,1);
+    background-color: rgba(255,255,255,1);
+}
+
+header  a:active.button 
+{
+    color: rgba(255,255,255,1);
+    text-shadow: 2px 2px 2px #000000;
+    background-color: rgba(0,77,119,.7);
+    border:4px inset;
+}
+
+/* --- topnav class -- */
+div.topnav 
+{
+	float: left;
+	padding-right: 10px;
+    margin: auto;
+}
+
+div.topnav ul 
+{
+    list-style-type: none;
+    padding: 0;
+}
+   
+div.topnav ul a 
+{
+    text-decoration: none;
+}
+
+div.topnav select 
+{
+    width: 180px;
+}
+
+
+
+

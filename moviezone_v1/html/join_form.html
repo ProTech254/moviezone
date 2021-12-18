@@ -1,0 +1,194 @@
+<!-------------------------------------------------------------------
+HTML content of join member form
+
+Author: 
+Modified by:
+Date:
+------------------------------------------------------------------------------------>
+<style>
+    .join_form_feedback_messages
+    {
+        background: cornsilk;
+        color: red;
+        border: 1px solid #44318D;
+        display: block;
+        position: relative;
+        overflow-y: auto;
+        left: 2px;
+        max-width: 794px;
+        max-height: 80px;
+        border-width: 1px;
+        border-radius: 5px;
+    }
+    
+    .join_form_feedback_messages p
+    {
+        padding-left:14px;
+        color: red;
+    }
+</style>
+
+<h2>
+    Register here to become a member and order movies to rent or buy!<br>
+    <span id="compulsorynote">&nbsp;Please note: An asterix, e.g.&nbsp;<span class="requiredfield">*</span>&nbsp;, indicates a required field.</span>
+</h2>
+
+<div style= "max-width:800px; min-width:800px">
+<div id="join_form_feedback_messages" name="join_form_feedback_messages" class="join_form_feedback_messages" ></div>
+<form name="newMember" id="newMember" method="post" enctype="multipart/form-data" >
+    <input type="hidden" name="member_id" >
+    <input type="hidden" name="join_date" >  
+    <input type="hidden" name="magazine" value=0 >
+    <fieldset id="names">
+        <legend>Name <span class="requiredfield" >*&nbsp;</span></legend>
+        <div class="tooltip">
+            <label for="last_name" class="label1">Last Name: </label>
+            <input type="text" name="last_name" id="last_name" size="50" maxlength="50" value="">
+                <span class="tooltiptext">Please enter your last name here.</span>
+                <span class="requiredfield">*</span>
+            <br>
+            <label for="first_name" class="label1">First Name: </label>
+            <input type="text" name="first_name" id="first_name" size="50" maxlength="50" value="">
+                <span class="tooltiptext">Please enter your first name here.</span>
+                <span class="requiredfield" >*</span>
+        </div>
+    </fieldset>
+    <br>
+    <fieldset id="contact_method">
+        <legend>Preferred Contact Method <span class="requiredfield" >*&nbsp;</span> </legend>
+        <input type="radio" name="contact" id="contact1" value="mobile" 
+            onclick="preferredContactClick('mobile');" >
+        <label for="contact1">Mobile phone &nbsp; &nbsp;</label>
+        <input type="radio" name="contact" id="contact2" value="landline" 
+            onclick="preferredContactClick('landline');"> 
+        <label for="contact2">Landline phone &nbsp; &nbsp;</label>
+        <input type="radio" name="contact" id="contact3" value="email"
+            onclick="preferredContactClick('email');"> 
+        <label for="contact3">Email</label>
+        <br>
+    </fieldset>
+    <br>
+    <fieldset id="contact_details">
+        <legend>Contact Details <span class="requiredfield" >*&nbsp;</span></legend>
+        <div id="mobileline" class="tooltip">
+            <span class="tooltiptext">Please enter a mobile number with the format:<br>
+                0[4]XX XXX XXX where X is a digit</span>
+            <label for="mobile" class="label1">Mobile: </label>
+            <input type="text" name="mobile" id="mobile" size="20" maxlength="12" value="">  
+            <span class="requiredfield" id="mobileMarker" style="visibility:hidden">*</span>
+        </div>
+        <br>
+        <div id="landlineline" class="tooltip">
+            <span class="tooltiptext">Please enter a landline number with the format:<br>
+                (0X) XXXX XXXX where X is a digit</span>
+            <label for="landline" class="label1">Landline: </label>
+            <input type="text" name="landline" id="landline" size="20" maxlength="14" value="" >
+            <span class="requiredfield" id="landlineMarker" style="visibility:hidden" >*</span>
+        </div>
+        <br>
+        <div id="emailline" class="tooltip">
+            <span class="tooltiptext">Please enter a valid email address.</span>
+            <label for="email" class="label1">Email: </label>
+            <input type="text" name="email" id="email" size="50" maxlength="60" value="" >
+            <span class="requiredfield" id="emailMarker" style="visibility:hidden" >*</span>
+        </div>
+    </fieldset>
+    <br>
+    <fieldset id="choose_occupation">
+        <legend>Choose Your Occupation <span class="requiredfield" >*&nbsp;</span></legend>
+        <div class="tooltip">
+            <label for="occupation" class="label1">Occupation: </label>
+            <select size="1" name="occupation" id="occupation">
+                <option>Select your occupation</option>
+                <option value="Student">Student</option>
+                <option value="Manager">Manager</option>
+                <option value="Health worker">Health worker</option>
+                <option value="Trades worker">Trades worker</option>
+                <option value="Education">Education</option>
+                <option value="Technician">Technician</option>
+                <option value="Clerical worker">Clerical worker</option>
+                <option value="Retail worker">Retail worker</option>
+                <option value="Researcher">Researcher</option>
+                <option value="Other">Other</option>
+                <option value=""></option>
+            </select> 
+            <span class="tooltiptext">
+                Please select your occupation here.<br>
+                If your ocupation is not listed please select "Other".<br>
+                If you do not wish to indicate your occupation please select the blank field.
+            </span>
+            <span class="requiredfield">*</span>
+        </div>
+    </fieldset>
+    <br>
+
+    <fieldset id="address_details">
+        <legend>Magazine</legend>
+        <div class="tooltip">
+            <span class="tooltiptext">Please check this box, if you wish the receive our monthly magazine.</span>
+            <input type="checkbox" name="magazine_checkbox" id="magazine_checkbox" 
+                onclick="magazine_checkboxClick();">
+            <label for="magazine_checkbox">I wish to receive the monthly magazine in the post.</label>
+        </div>
+        <br>
+        <div id="streetline" class="tooltip">
+            <span class="tooltiptext">Please enter the house number and street address.</br>
+                e.g. 7/11 Somestreet Drive</span>
+            <label for="street_addr" class="label1">Street address: </label>
+            <input type="text" name="street_addr" id="street_addr" size="50" maxlength="60" value= ""> 
+            <span class="requiredfield" id="streetMarker" style="visibility:hidden" >*</span>
+        </div>
+        <br>
+        <div id="suburbline" class="tooltip">
+            <span class="tooltiptext">Please enter the suburb and state separated by a comma,<br>
+                e.g. Suburb, State</span>
+            <label for="suburb_state" class="label1">Suburb and State: </label>
+            <input type="text" name="suburb_state" id="suburb_state" size="50" maxlength="60">
+            <span class="requiredfield" id="suburbMarker" style="visibility:hidden" >*</span>
+        </div>
+        <br>
+        <div id="postcodeline" class="tooltip">
+            <span class="tooltiptext">Please enter a 4 digit postcode.</span>
+            <label for="postcode" class="label1">Postcode: </label>
+            <input type="text" name="postcode" id="postcode" size="20" maxlength="4">
+            <span class="requiredfield" id="postcodeMarker" style="visibility:hidden" >*</span>
+        </div>    
+    </fieldset>
+    <br>
+    <fieldset id="username_password">
+        <legend>Username and Password <span class="requiredfield" >*&nbsp;</span></legend>
+        <div id="usernameline" class="tooltip">
+            <span class="tooltiptext">Please enter a username. <br> Minimum of 6 characters - 
+                Maximum of 10 characters.</span>
+            <label for="username" class="label1">Username: </label>
+            <input type="text" name="username" id="username" size="20" maxlength="10" value="" > 
+            <span class="requiredfield">*</span>
+        </div>
+        <br>
+        <div id="passwordline" class="tooltip">
+            <span class="tooltiptext">Please enter the password.</br> The password must be a maximum of 10 characters containing at
+                least one uppercase letter, one lowercase letter, one number and one special character with no spaces.</span>
+            <label for="password" class="label1">Password: </label>
+            <input type="password" name="password" id="password" size="20" maxlength="10" value="" >
+            <span class="requiredfield">*</span>
+        </div>
+        <br>
+        <div id="password2line" class="tooltip">
+            <span class="tooltiptext">Please enter the password again for verification.</span>
+            <label for="password2" class="label1">Verify password: </label>
+            <input type="password" name="password2" id="password2" size="20" maxlength="10" value="" >
+            <span class="requiredfield">*</span>
+        </div>
+    </fieldset>
+    <br>
+    
+    <input type="button" name="join_button" id="join_button" value="Join the DVD Emporium Now"
+        onclick="validateMemberForm()">
+    <input type="reset" name="reset_button" id="reset_button" value="Reset" 
+        onclick="updateFormFeedback(null)">
+    <input type="button" name="populate_button" id="populate_valid_button" value="Populate the form with valid test data"
+        onclick="populateJoinFormValid()">
+</form>
+</div>
+<p>Privacy Notice: We take your privacy seriously. Your data will not be shared with any third party.</p>
+

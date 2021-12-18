@@ -1,0 +1,79 @@
+/*-------------------------------------------------------------------------------------------------
+                                   MEMBER JOIN FORM
+ -------------------------------------------------------------------------------------------------*/
+
+#compulsorynote
+{
+   color: red;
+   font-size: 15px;
+}
+
+#newMember
+{
+   font-size: 15px;
+}
+
+#newMember legend
+{
+   font-weight: bold;
+   /*color: #116466;  /*teal*/
+   color: #44318D;  /*purple*/
+   font-style: italic;
+}
+
+#newMember fieldset
+{
+   border-style: solid;
+   /*border-color: #116466;  /*teal*/
+   border-color: #44318D;  /*purple*/
+   border-width: 3px;
+   border-radius: 5px;
+}
+  
+.label1
+{
+   display: inline-block;
+   width: 130px;
+}
+
+.requiredfield
+{
+   color: red;
+   font-size: 25px;
+   vertical-align: middle;
+}
+
+.tooltip
+{
+   position: relative;
+   display: inline-block;   
+}
+
+.tooltip .tooltiptext
+{
+   visibility: hidden;
+   width: 250px;
+   position: absolute;
+   z-index: 1;
+}
+
+.tooltiptext
+{
+   font-size: 15px;
+   color: red;
+   background-color: cornsilk;
+   font-weight: normal;
+   padding:5px;
+   left:104%;
+   border: 1px solid black;
+}
+
+.tooltip:hover .tooltiptext
+{
+   visibility: visible;
+}
+
+input[type=text]:focus
+{
+   background-color: cornsilk;
+}
